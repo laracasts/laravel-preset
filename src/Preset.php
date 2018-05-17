@@ -10,16 +10,10 @@ class Preset extends LaravelPreset
 {
     public static function install()
     {
-        static::cleanSassDirectory();
         static::updatePackages();
         static::updateMix();
         static::updateScripts();
         static::updateStyles();
-    }
-
-    public static function cleanSassDirectory()
-    {
-        File::cleanDirectory(resource_path('assets/sass'));
     }
 
     public static function updatePackageArray($packages)
@@ -44,6 +38,8 @@ class Preset extends LaravelPreset
 
     public static function updateStyles()
     {
+        File::cleanDirectory(resource_path('assets/sass'));
+
         File::put(resource_path('assets/sass/app.sass'), '');
     }
 }
