@@ -16,6 +16,8 @@ class LaracastsServiceProvider extends ServiceProvider
     {
         PresetCommand::macro('laracasts', function ($command) {
             Preset::install();
+
+            $command->info('All finished! Please compile your assets, and you are all set to go!');
         });
     }
 }
