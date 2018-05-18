@@ -19,9 +19,10 @@ class Preset extends LaravelPreset
     public static function updatePackageArray($packages)
     {
         return array_merge(['laravel-mix-tailwind' => '^0.1.0'], Arr::except($packages, [
-            'popper.js',
+            'bootstrap',
+            'jquery',
             'lodash',
-            'jquery'
+            'popper.js'
         ]));
     }
 
